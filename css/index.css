@@ -1,0 +1,301 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@300;500;700&display=swap'); /*8) Buscamos las fuentes que aplicaremos en nuestra página en google fonts*/
+
+/* 9) Variables - Creamos las variables que necesitarémos en nuestra página, como el color principal, secundario, fuentes...*/ 
+
+:root {
+    --principal: #d6900d;
+    --secondary: #ffffff;
+    --font-primary: "Inter", sans-serif;
+    --font-secondary: "Bowly One SC", cursive;
+    --text-lg: 2em;
+    --text-md: 1.8em; /*  Aquí estamos especificando que queremos que el texto-md (mediano) sea de 1.6 em, es decir de 16px ya que 1em son 10px. Por ejemplo si quisieramos que no fuera de 16px el texto mediano, sino de 18px, entonces tendríamos que cambiar la variable --text-md: de 1.6em a 1.8em*/
+} /*Aquí estamos estableciendo el color principal de la pagina que es el fondo, el color secundario de la pagina que son los textos, el tipo de fuente y el tamaño de fuente */
+
+/* 10) Reset - El navegador trae unas propiedades preestablecidas que aplica a las páginas. Nosotros queremos resetear algunas variables por comodidad y eficiencia a la hora de trabajar*/ 
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Aquí le estamos diciendo al navegador que queremos nosotros establecer los valores del margin, padding y box-sizing como queremos y no como el navegador lo hace de forma predeterminada */
+}
+
+/* 11) Globals - Establecemos los globales para estandarizar variables para un trabajo más optimo*/ 
+/* Consejo del profesor: para todo lo que es tamaño de fuente, usar em. Para todo lo que son margenes, paddings, etc, usar rem.   */
+html {
+    font-size: 62.5%; /* Aquí le estamos ordenando al navegador que queremos que nuestro tamaño de fuente predeterminado sea 62.5% que lo propuesto por el navegador. Y este valor es igual a 10px ó a 1em, permitiendonos trabajar más comodo haciendo paginas responsive */
+    font-family: var(--font-primary); /*la función var me permite usar el --font-primary como si lo copiara y pegara, y asi evitar perder tanto tiempo copiando y pegando*/
+    color: var(--secondary); /*Aquí le estoy diciendo al navegador que quiero que el valor por defecto de mis textos sea la variable secondary*/
+    background-color: var(--principal);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+
+
+ul {
+    list-style-type: none; /* Esta variable hace que a la hora de hacer listas no ordenadas, no me aparezcan los puntos o "disquitos" */ 
+}
+
+a {
+    text-decoration: none; 
+    color: inherit; /*Aquí queremos que el color de los enlaces sea el "heredado" por el padre */
+    display: inline-block;
+} /*Estas son más configuraciones iniciales, esta vez estableciendo las de los enlaces*/
+
+/* 12) Helpers ---> Ya podríamos empezar a escribir nuestro código pero antes queremos crear algunas clases que vamos a necesitar más adelante */
+
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container { /*Este va a ser el contenedor de la página, y estámos indicando que queremos que nuestro bloque entero, desde bordes para adentro (sin contar margenes), no mida más de 1080px*/
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* 13) Hasta aquí, todo lo anterior fue netamente para configurar lo que necesitamos inicialmente para codear y que sea más rápido y sencillo de forma que podamos escalar fácilmente*/
+
+/* 14) Header*/ 
+header {
+    background-color: var(--principal);
+}
+/*16)Luego de agregarle al navbar el flex-row en html, volvemos a CSS y vamos a darle estilos al navbar...*/
+header .navbar {
+    min-height: 10vh;/* 17) Aquí estamos diciendo que queremos aplicar para el navbar, que del ancho visible de la pantalla, queremos que tenga un 10%*/
+    justify-content: space-between; /*18) Aquí hacemos que los dos elementos, logo y ul, del navbar se separen, y me quedaron uno en un extremo y el otro en el otro extremo. Y como queremos que no estén tan separados, crearemos un contenedor en html en la etiqueta del navbar para que todo me quede en 1080px de ancho máximo*/
+    align-items: center; /* 20) Aquí indicamos que queremos que todos los items del navbar estén centrados con respecto al navbar*/
+    flex-wrap: wrap; /* 36) Esto nos permite hacer que nuestra pagina empiece a ser RESPONSIVE, de forma que a medida que se reduzca el ancho de la página, se van ajustando los elementos y en este caso el ul (menu) pasa a organizarse debajo del logo*/
+    padding: 0 2rem;/* 21) le agregamos un padding para que el navbar tenga una separación a los costados de 2rem que es igual a 20px, esto con el fin de que visualmente sea cómodo*/
+}
+
+/* 22) Ahora vemos que tenemos que trabajar con el ul del navbar ya que todos los elementos aún están en sentido columna, por lo que tendrémos que aplicar un flex-row*/
+
+header .logo {
+    flex-basis: 30%; /* 26) aplicamos la misma etiqueta del menú, en el logo, para que el logo pase a adueñarse de un 30% del espacio horizontal del navbar*/
+}   
+
+header .menu {
+    flex-basis: 40%; /*25) Es importantes que antes de tratar de separar los li del menú, deba haber un espacio en el cuál puedan separarse, de lo contrario, aunque ponga la etiqueta justify-content:space-between, no se separarán. Es por esto que con la etiqueta flex-basis, definimos que queremos que el bloque del menú, tenga un espacio del 40% del navbar a lo ancho, de forma que podamos aprovechar este espacio para repartir los li*/
+    justify-content: space-between; /* 27) Y ahora si aplicamos el justify-content:space-between para separar proporcionalmente los li del ul (menú) */ 
+}
+
+header .menu__item {
+    border: 2px solid var(--principal); /* 30) Aquí estamos creando un borde en los li (menu__item) que es del mismo color del navbar, haciendo que se encondan y parezcan invisibles estos bordes, con el objetivo de ocupar este espacio ya que más adelante vamos a crear el efecto de aparecer un borde del color secundario en el momento en que pasamos el mouse por encima de los botones li del menu. De lo contrario, si no creamos estos bordes camuflados, entonces surgiría un efecto de "salto" cuando hagamos el efecto hover de pasar el mouse por encima de los menu__item*/
+    transition: border-color .3s ease-in-out; /* Aquí estamos ajustando el efecto de tiempos de entrada y salida de cuando pasamos sobre los li del sub-menu*/
+    /* position: relative; */
+}
+
+.menu .menu__item:hover { /* 31) Aquí creamos el efecto de que aparezcan bordes de color secundario en el momento de pasar el mouse por encima de los li (menu__item)*/ 
+    border-color: var(--secondary);
+}
+
+.menu .menu__item .menu__link {
+    font-size: var(--text-md); /* 32) Aquí especificamos que queremos que los menu__link de los menu__item sean del tamaño definido en el root, es decir, de 1.8em que es lo mismo que 18px*/ 
+    padding: 1rem; /* 33) Aquí creamos un padding aplicado a los .menu__link para que sea más cómodo de señalar y el usuario no tenga que ir directamente al texto sino que se seleccione un poco antes*/
+}
+
+.menu .menu__item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none; /* 24) Aquí quisimos ocultar el ul sub-menu de la il productos ya que nos estaba estaba estorbando en el momento a la hora de visualizar el procedimiento de la página*/
+    position: absolute;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link {/* 34) Aqui le especificamos el tamaño de letra, padding y efecto a los sub-menu__link*/
+    padding: 1rem;
+    font-size: 1.4em;
+    transition: all .3s ease-in-out;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link:hover{ /* 35)Aqui le agregamos el efecto de que aparezca un fondo en nuestros sub-menu__link en el momento en que pasamos el cursor por encima */
+    background-color: var(--secondary);
+    color: var(--principal);
+}
+
+
+
+/* Main Section Index */
+
+.presentation {
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.presentation__picture {
+    flex-basis: 50%;
+    min-width: 320px; /* este parámetro nos asegura de que la imagen no va a reducir su ancho en menos de 320px, de lo contrario, podría achicarse hasta desaparecer. Nos basamos en la unidad de 320px como unidad mínima porque sabemos que no hay celulares tengan menos de 320px*/
+}
+
+.presentation__img {
+    width: 100%;
+}
+
+.presentation__description {
+    flex-basis: 50%;
+    color: var(--secondary);
+}
+
+.presentation__container p{
+    font-size: 2.4em;
+    
+}
+
+.presentation__container h1{
+    font-size: 4.8em;
+    text-transform: capitalize;
+    flex-basis: 100%;
+    min-width: 320px;
+}
+
+
+
+/* Footer */ 
+
+    footer {
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        background-color: #5F8599;
+    }
+
+/* Main Section Contacto*/
+
+.AgregarDatos {
+    gap: 2rem;
+    padding: 0 2rem;
+}
+.AgregarDatos__picture {
+    background-image: url("img/landscape3.jpg");
+    background-attachment: fixed;
+    min-width: 320px;
+    gap: 2rem;
+}
+
+.AgregarDatos__img {
+    width: 100%;
+}
+
+main input {
+    background-color: rgba(255, 127, 80, 50%)
+}
+
+
+/* NOSOTROS */
+
+
+.bio {
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.rock_your_life {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2rem;
+    grid-template-areas: 
+    "Rock1 Your1 Life1"
+    "Rock2 Your2 Life2";  
+    gap: 2rem;
+}
+
+.img1 {
+    grid-area: Rock1;
+}
+
+.img2 {
+    grid-area: Rock2;
+}
+.img3 {
+    grid-area: Your2;
+}
+.img4 {
+    grid-area: Your1;
+}
+.img5 {
+    grid-area: Life1;
+}
+.img6 {
+    grid-area: Life2;
+}
+
+
+.rock_your_life img {
+    width: 100%;
+}
+
+   
+@media screen and (max-width: 720px) {
+    header {
+        padding: 2em;
+    }
+    
+    header .navbar { 
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .presentation {
+        flex-wrap: wrap;
+    }
+    
+    .presentation__picture {
+        flex-grow: 1;
+    }
+
+    .presentation__container h1{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .presentation__description {
+        flex-grow: 1;
+        display: flex;
+        order: -1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        font-size: .8em;
+    }
+
+    .AgregarDatos {
+        flex-wrap: wrap;
+    }
+
+    .AgregarDatos__picture {
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    .rock_your_life {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        "img1" 
+        "img2"
+        "img3" 
+        "img4"
+        "img5" 
+        "img6"
+        ;
+    }
+}
