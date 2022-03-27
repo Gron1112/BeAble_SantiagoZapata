@@ -6,6 +6,7 @@
 :root {
     --principal: #d6900d;
     --secondary: #ffffff;
+    --grad--bg: linear-gradient(to bottom, #d6900d, #d6900d, #d6900d, #d6900d, #d6900d, #ba980e, #9e9e20, #84a135, #5f8599);   
     --font-primary: "Inter", sans-serif;
     --font-secondary: "Bowly One SC", cursive;
     --text-lg: 2em;
@@ -26,18 +27,22 @@
 /* Consejo del profesor: para todo lo que es tamaño de fuente, usar em. Para todo lo que son margenes, paddings, etc, usar rem.   */
 html {
     font-size: 62.5%; /* Aquí le estamos ordenando al navegador que queremos que nuestro tamaño de fuente predeterminado sea 62.5% que lo propuesto por el navegador. Y este valor es igual a 10px ó a 1em, permitiendonos trabajar más comodo haciendo paginas responsive */
-    font-family: var(--font-primary); /*la función var me permite usar el --font-primary como si lo copiara y pegara, y asi evitar perder tanto tiempo copiando y pegando*/
-    color: var(--secondary); /*Aquí le estoy diciendo al navegador que quiero que el valor por defecto de mis textos sea la variable secondary*/
-    background-color: var(--principal);
+    /*color: var(--secondary);*/ /*Aquí le estoy diciendo al navegador que quiero que el valor por defecto de mis textos sea la variable secondary*/
 }
 
 body {
     display: grid;
+    font-family: var(--font-primary); /*la función var me permite usar el --font-primary como si lo copiara y pegara, y asi evitar perder tanto tiempo copiando y pegando*/
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    color: var(--secondary);
+    background: var(--grad--bg);
 }
 
-
+ol, ul {
+    padding-left: 0;
+    margin-bottom: rem;
+}
 
 ul {
     list-style-type: none; /* Esta variable hace que a la hora de hacer listas no ordenadas, no me aparezcan los puntos o "disquitos" */ 
@@ -162,7 +167,14 @@ header .menu__item {
     min-width: 320px;
 }
 
+.presentation__badge img{
+    transform: scale(1.5) translateX(50px);
+    transition: transform 1s ease-in-out;
+}
 
+.presentation__badge img:hover {
+    transform: scale(3);    
+}
 
 /* Footer */ 
 
@@ -204,6 +216,13 @@ main input {
     padding: 0 2rem;
 }
 
+.bio h2 {
+    font-size: 3.6em;
+}
+
+.bio p {
+    font-size: 1.8em;
+}
 .rock_your_life {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -213,6 +232,26 @@ main input {
     "Rock1 Your1 Life1"
     "Rock2 Your2 Life2";  
     gap: 2rem;
+}
+
+.rock_your_life__img1 {
+    animation: rotacion_loca 1 ease-in-out 5s;
+}
+
+.rock_your_life__img2 {
+    animation: rotacion_loca 1 ease-in-out 5s;
+}
+.rock_your_life__img3 {
+    animation: rotacion_loca 1 ease-in-out 5s;
+}
+.rock_your_life__img4 {
+    animation: rotacion_loca 1 ease-in-out 5s;
+}
+.rock_your_life__img5 {
+    animation: rotacion_loca 1 ease-in-out 5s;
+}
+.rock_your_life__img6 {
+    animation: rotacion_loca 1 ease-in-out 5s;
 }
 
 .img1 {
@@ -235,12 +274,17 @@ main input {
     grid-area: Life2;
 }
 
-
 .rock_your_life img {
     width: 100%;
 }
 
    
+.formulario__input-text {
+    padding: 8rem;
+    outline: none;
+    border: none;
+}
+
 @media screen and (max-width: 720px) {
     header {
         padding: 2em;
@@ -273,6 +317,15 @@ main input {
         align-items: center;
     }
 
+    .presentation__badge img {
+        transform: scale(1.5) translateX(2px);
+        transition: transform 1s ease-in-out;
+    }
+
+    .presentation__badge img:hover {
+        transform: rotate(180deg);
+    }
+
     .menu {
         font-size: .8em;
     }
@@ -298,4 +351,16 @@ main input {
         "img6"
         ;
     }
+
+    
 }
+
+@keyframes rotacion_loca {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}   
