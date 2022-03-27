@@ -218,12 +218,14 @@ main input {
 }
 
 .bio h2 {
-    font-size: 3.6em;
+    font-size: 3.6em;    
 }
 
 .bio p {
     font-size: 1.8em;
 }
+
+
 .rock_your_life {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -372,3 +374,9 @@ main input {
         transform: rotate(360deg);
     }
 }   
+
+@keyframes heartbeat {
+    animate__heartBeat {
+
+    }
+}
