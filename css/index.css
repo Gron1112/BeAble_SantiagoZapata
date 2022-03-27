@@ -187,20 +187,21 @@ header .menu__item {
 
 /* Main Section Contacto*/
 
-.AgregarDatos {
-    gap: 2rem;
-    padding: 0 2rem;
-}
-.AgregarDatos__picture {
-    background-image: url("img/landscape3.jpg");
-    background-attachment: fixed;
+
+
+.agregardatos {
+    background: url(../assets/img/Montañas2.svg);   
+    background-size: 100% auto;
+    background-position: center;
+    padding: 2rem;
+    width: 100%;
     min-width: 320px;
-    gap: 2rem;
+}
+.agregardatos__picture {
+    min-width: 320px;
+    gap: 2rem;    
 }
 
-.AgregarDatos__img {
-    width: 100%;
-}
 
 main input {
     background-color: rgba(255, 127, 80, 50%)
@@ -229,49 +230,56 @@ main input {
     grid-template-rows: repeat(2, 1fr);
     padding: 2rem;
     grid-template-areas: 
-    "Rock1 Your1 Life1"
-    "Rock2 Your2 Life2";  
+    "Rock1" "Your2" "Life1"
+    "Rock2" "Your1" "Life2";  
     gap: 2rem;
 }
 
-.rock_your_life__img1 {
-    animation: rotacion_loca 1 ease-in-out 5s;
-}
-
-.rock_your_life__img2 {
-    animation: rotacion_loca 1 ease-in-out 5s;
-}
-.rock_your_life__img3 {
-    animation: rotacion_loca 1 ease-in-out 5s;
-}
-.rock_your_life__img4 {
-    animation: rotacion_loca 1 ease-in-out 5s;
-}
-.rock_your_life__img5 {
-    animation: rotacion_loca 1 ease-in-out 5s;
-}
-.rock_your_life__img6 {
-    animation: rotacion_loca 1 ease-in-out 5s;
-}
 
 .img1 {
-    grid-area: Rock1;
+    grid-area: "Rock1";
 }
 
 .img2 {
-    grid-area: Rock2;
+    grid-area: "Rock2";
 }
 .img3 {
-    grid-area: Your2;
+    grid-area: "Your2";
 }
 .img4 {
-    grid-area: Your1;
+    grid-area: "Your1";
 }
 .img5 {
-    grid-area: Life1;
+    grid-area: "Life1";
 }
 .img6 {
-    grid-area: Life2;
+    grid-area: "Life2";
+}
+
+.rock_your_life__img1 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 1s;
+}
+
+.rock_your_life__img2 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 2.5s;
+}
+.rock_your_life__img3 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 1.5s;
+}
+.rock_your_life__img4 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 3s;
+}
+.rock_your_life__img5 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 2s;
+}
+.rock_your_life__img6 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 3.5s;
 }
 
 .rock_your_life img {
@@ -333,7 +341,7 @@ main input {
     .AgregarDatos {
         flex-wrap: wrap;
     }
-
+    
     .AgregarDatos__picture {
         flex-grow: 1;
         align-items: center;
