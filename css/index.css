@@ -295,6 +295,12 @@ main input {
     border: none;
 }
 
+.imagenes img{
+    border-radius: 5px;
+}
+.carousel {
+    padding: 2rem;
+}
 @media screen and (max-width: 720px) {
     header {
         padding: 2em;
