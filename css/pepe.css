@@ -1,0 +1,396 @@
+/* Imports */
+/* @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Inter:wght@300;500;700&display=swap'); */
+
+/* 9) Variables - Creamos las variables que necesitarémos en nuestra página, como el color principal, secundario, fuentes...*/ 
+
+/* :root {
+    --principal: #d6900d;
+    --secondary: #ffffff;
+    --grad--bg: linear-gradient(to bottom, #d6900d, #d6900d, #d6900d, #d6900d, #d6900d, #ba980e, #9e9e20, #84a135, #5f8599);   
+    --font-primary: "Inter", sans-serif;
+    --font-secondary: "Bowly One SC", cursive;
+    --text-lg: 2em;
+    --text-md: 1.8em; 
+}  */
+
+/* 10) Reset - El navegador trae unas propiedades preestablecidas que aplica a las páginas. Nosotros queremos resetear algunas variables por comodidad y eficiencia a la hora de trabajar*/ 
+
+/* *,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* 11) Globals - Establecemos los globales para estandarizar variables para un trabajo más optimo*/ 
+
+/* html {
+    font-size: 62.5%;
+    color: $secondary;
+}*/
+
+/* body {
+    display: grid;
+    font-family: $font-primary; 
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    color: $secondary;
+    background: $grad--bg;
+}
+
+ol, ul {
+    padding-left: 0;
+    margin-bottom: rem;
+}
+
+ul {
+    list-style-type: none; 
+}
+
+a {
+    text-decoration: none; 
+    color: inherit; 
+    display: inline-block;
+}  */
+
+/* 12) Helpers ---> Ya podríamos empezar a escribir nuestro código pero antes queremos crear algunas clases que vamos a necesitar más adelante */
+
+/* .flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container { 
+    max-width: 1080px;
+    margin: 0 auto;
+} */
+
+/* 13) Hasta aquí, todo lo anterior fue netamente para configurar lo que necesitamos inicialmente para codear y que sea más rápido y sencillo de forma que podamos escalar fácilmente*/
+
+/* 14) Header*/ 
+/* header {
+    background-color: $principal;
+}
+
+header .navbar {
+    min-height: 10vh;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 2rem;
+}
+
+
+
+header .logo {
+    flex-basis: 30%;
+}   
+
+header .menu {
+    flex-basis: 40%;
+    justify-content: space-between; 
+}
+
+header .menu__item {
+    border: 2px solid $principal; 
+    transition: border-color .3s ease-in-out; 
+   
+}
+
+.menu .menu__item:hover { 
+    border-color: $secondary;
+}
+
+.menu .menu__item .menu__link {
+    font-size: $text-md; 
+    padding: 1rem;
+}
+
+.menu .menu__item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none; 
+    position: absolute;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link {
+    padding: 1rem;
+    font-size: 1.4em;
+    transition: all .3s ease-in-out;
+}
+
+.sub-menu .sub-menu__item .sub-menu__link:hover{
+    background-color: $secondary;
+    color: $principal;
+} */
+
+
+
+/* Main Section Index */
+
+/* .presentation {
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.presentation__picture {
+    flex-basis: 50%;
+    min-width: 320px; 
+}
+
+.presentation__img {
+    width: 100%;
+}
+
+.presentation__description {
+    flex-basis: 50%;
+    color: $secondary;
+}
+
+.presentation__container p{
+    font-size: 2.4em;
+    
+}
+
+.presentation__container h1{
+    font-size: 4.8em;
+    text-transform: capitalize;
+    flex-basis: 100%;
+    min-width: 320px;
+}
+
+.presentation__badge img{
+    transform: scale(1.5) translateX(50px);
+    transition: transform 1s ease-in-out;
+}
+
+.presentation__badge img:hover {
+    transform: scale(3);    
+} */
+
+/* Footer */ 
+
+ /* footer {
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        background-color: #5F8599;
+    } */
+
+/* Main Section Contacto*/
+
+
+
+/* .agregardatos {
+    background: url(../assets/img/Montañas2.svg);   
+    background-size: 100% auto;
+    background-position: center;
+    padding: 2rem;
+    width: 100%;
+    min-width: 320px;
+}
+.agregardatos__picture {
+    min-width: 320px;
+    gap: 2rem;    
+}
+
+
+main input {
+    background-color: rgba(255, 127, 80, 50%)
+} */
+
+
+/* NOSOTROS */
+
+
+/* .bio {
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.bio h2 {
+    font-size: 3.6em;    
+}
+
+.bio p {
+    font-size: 1.8em;
+}
+
+
+.rock_your_life {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2rem;
+    grid-template-areas: 
+    "Rock1" "Your2" "Life1"
+    "Rock2" "Your1" "Life2";  
+    gap: 2rem;
+}
+
+
+.img1 {
+    grid-area: "Rock1";
+}
+
+.img2 {
+    grid-area: "Rock2";
+}
+.img3 {
+    grid-area: "Your2";
+}
+.img4 {
+    grid-area: "Your1";
+}
+.img5 {
+    grid-area: "Life1";
+}
+.img6 {
+    grid-area: "Life2";
+}
+
+.rock_your_life__img1 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 1s;
+}
+
+.rock_your_life__img2 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 2.5s;
+}
+.rock_your_life__img3 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 1.5s;
+}
+.rock_your_life__img4 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 3s;
+}
+.rock_your_life__img5 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 2s;
+}
+.rock_your_life__img6 {
+    border-radius: 10px;
+    animation: rotacion_loca 1 ease-in-out 3.5s;
+}
+
+.rock_your_life img {
+    width: 100%;
+} */
+
+   
+/* .formulario__input-text {
+    padding: 8rem;
+    outline: none;
+    border: none;
+} */
+
+/* .imagenesBarras img{
+    border-radius: 5px;
+} */
+
+/* .imagenesBebidas img{
+    border-radius: 5px;   
+} */
+
+/* .imagenesSnack img{
+    border-radius: 10px;
+} */
+
+/* .carousel {
+    padding: 2rem 1rem;
+} */
+/* @media screen and (max-width: 720px) { */
+     /* header {
+        padding: 2em;
+    }
+    
+    header .navbar { 
+        flex-direction: column;
+        justify-content: center;
+    } */
+     
+    /* .presentation {
+        flex-wrap: wrap;
+    }
+    
+    .presentation__picture {
+        flex-grow: 1;
+    }
+
+    .presentation__container h1{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .presentation__description {
+        flex-grow: 1;
+        display: flex;
+        order: -1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .presentation__badge img {
+        transform: scale(1.5) translateX(2px);
+        transition: transform 1s ease-in-out;
+    }
+
+    .presentation__badge img:hover {
+        transform: rotate(180deg);
+    } */
+
+    /* .menu {
+        font-size: .8em;
+    } */
+
+    /* .AgregarDatos {
+        flex-wrap: wrap;
+    }
+    
+    .AgregarDatos__picture {
+        flex-grow: 1;
+        align-items: center;
+    } */
+
+    /* .rock_your_life {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        "img1" 
+        "img2"
+        "img3" 
+        "img4"
+        "img5" 
+        "img6"
+        ;
+    } */
+/*
+    
+}*/
+
+/* @keyframes rotacion_loca {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}   
+
+@keyframes heartbeat {
+    animate__heartBeat {
+
+    }
+} */

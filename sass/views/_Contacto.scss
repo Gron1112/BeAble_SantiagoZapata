@@ -1,0 +1,37 @@
+.agregardatos {
+    background: url(../assets/img/Montañas2.svg);   
+    background-size: 100% auto;
+    background-position: center;
+    padding: 2rem;
+    width: 100%;
+    min-width: 320px;
+
+    &__picture {
+        min-width: 320px;
+        gap: 2rem;    
+    }
+}
+
+
+main input {
+    background-color: rgba(255, 127, 80, 50%)
+}
+
+.formulario__input-text {
+    padding: 8rem;
+    outline: none;
+    border: none;
+}
+
+@media screen and (max-width: 720px) {
+
+    .AgregarDatos {
+        flex-wrap: wrap;
+        
+        &__picture {
+            flex-grow: 1;
+            align-items: center;
+        }
+    }
+    
+}

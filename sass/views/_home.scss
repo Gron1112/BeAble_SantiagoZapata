@@ -1,0 +1,82 @@
+.presentation {
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+    
+    &__picture {
+        flex-basis: 50%;
+        min-width: 320px; 
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__description {
+        flex-basis: 50%;
+        color: $secondary;
+    }
+    
+    &__container p{
+        font-size: 2.4em;
+        
+    }
+    
+    &__container h1{
+        font-size: 4.8em;
+        text-transform: capitalize;
+        flex-basis: 100%;
+        min-width: 320px;
+    }
+    
+    &__badge img{
+        transform: scale(1.5) translateX(50px);
+        transition: transform 1s ease-in-out;
+    }
+    
+    &__badge img:hover {
+        transform: scale(3);    
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 720px) {
+        
+   .presentation {
+       flex-wrap: wrap;
+       
+       &__picture {
+           flex-grow: 1;
+       }
+    
+       &__container h1{
+           flex-direction: column;
+           justify-content: center;
+           
+       }
+    
+       &__description {
+           flex-grow: 1;
+           display: flex;
+           order: -1;
+           flex-direction: column;
+           align-items: center;
+       }
+    
+       &__badge img {
+           transform: scale(1.5) translateX(2px);
+           transition: transform 1s ease-in-out;
+
+           &:hover {
+               transform: rotate(180deg);
+           }
+       }
+    
+   }
+   
+}
+
+
+
