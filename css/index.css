@@ -184,7 +184,8 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   padding: 2rem;
-  grid-template-areas: "Rock1" "Your2" "Life1" "Rock2" "Your1" "Life2";
+  grid-template-areas: "Rock1" "Your2" "Life1"
+ "Rock2" "Your1" "Life2";
   gap: 2rem; }
   .rock_your_life__img1 {
     border-radius: 10px;
@@ -225,11 +226,18 @@ footer {
 .img6 {
   grid-area: "Life2"; }
 
+  
+
 @media screen and (max-width: 720px) {
   .rock_your_life {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: "img1"  "img2" "img3"  "img4" "img5"  "img6"; } }
+    grid-template-areas: "img1" 
+ "img2"
+ "img3" 
+ "img4"
+ "img5" 
+ "img6"; } }
 
 .agregardatos {
   background: url(../assets/img/Montañas2.svg);
