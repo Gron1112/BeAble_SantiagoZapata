@@ -18,5 +18,21 @@ $images: (
         height: 200px;
         background-size: cover;
         background-image: url('../assets/img/#{$value}.jpg');
+        border-radius: 5px;
     }
+}
+
+$paddings: (
+    xlarge: 5rem,
+    large: 3rem,
+    medium: 0 2rem, 
+    small: 1.5 rem,
+    xsmall: 1rem,
+);
+
+@each $var, $val in $paddings {
+    .p-#{$var} {
+        padding: #{$val};
+    }
+
 }

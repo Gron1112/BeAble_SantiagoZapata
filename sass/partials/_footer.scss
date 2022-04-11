@@ -1,6 +1,5 @@
 footer {
-    align-items: center;
-    justify-content: center;
+    @include flex(row, center, center, 2rem, wrap);
     height: 10vh;
     background-color: #5F8599;
 }

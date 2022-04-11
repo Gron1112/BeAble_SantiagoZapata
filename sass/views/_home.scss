@@ -1,6 +1,6 @@
 .presentation {
-    gap: 2rem;
-    align-items: center;
+    @include flex(row, space-between, center, 2rem, wrap);
+    
     padding: 0 2rem;
     
     &__picture {

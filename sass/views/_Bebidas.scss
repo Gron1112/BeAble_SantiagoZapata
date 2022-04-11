@@ -11,6 +11,18 @@ main {
         align-items: center;
         gap: 2rem;
 
+        article {
+            h2 {
+                padding: map-get($paddings , medium);
+            }
+            p {
+                padding: map-get($paddings , medium);
+            }
+        }
+
+    }
+}
+
         // article {
 
         //     div {
@@ -34,8 +46,8 @@ main {
         //     }
         // }
 
-    }
-}
+//     }
+// }
 
 // @for $i from 1 through 3 {
 //     .img-#{$i} {

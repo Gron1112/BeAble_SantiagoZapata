@@ -1,13 +1,21 @@
 /* HELPERS */ 
-
-.flex-row {
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $gap:0, $wrap: wrap) {
     display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;  
+    wrap: $wrap;  
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
+// .flex-row {
+//     display: flex;
+// }
+
+// .flex-column {
+//     display: flex;
+//     flex-direction: column;
+// }
 
 .container { 
     max-width: 1080px;
